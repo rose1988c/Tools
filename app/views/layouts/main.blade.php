@@ -6,14 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="{{ HTML::script('assets/js/html5.js') }}"></script>
     <![endif]-->
     @section('css')
     {{-- include all required stylesheets --}}
     {{ HTML::style('assets/css/bootstrap.min.css') }}
     {{ HTML::style('assets/css/bootstrap-responsive.min.css') }}
     @show
-    <style type="text/css"> .navbar{ margin-bottom: 20px; }</style>
+    <style type="text/css"> .navbar{ margin-bottom: 20px; }
+    .navbar .nav > li .dropdown-menu {
+	    margin: -5px;
+    }
+    .navbar .nav > li:hover .dropdown-menu {
+    	display: block;
+    }
+    
+    </style>
     
     <link href="favicon.png" type="image/x-icon" rel="shortcut icon" />
 
@@ -33,7 +41,15 @@
                 <a class="brand" href="../">Tools</a>
                 <div class="nav-collapse collapse" id="main-menu">
                     <ul class="nav" id="main-menu-left">
-                      <li><a target="_blank" href="https://github.com/rose1988c/Tools">Github</a></li>
+                        <li class="dropdown">
+                           <a href="#menu3">工具</a>
+                           <ul class="dropdown-menu">
+                                <li><a href="#menu7">ICurl</a></li>
+            				    <li><a href="#menu8">Db2Models</a></li>
+            				    <li><a href="#menu8">比特熊</a></li>
+                          </ul>
+                        </li>
+                        <li><a target="_blank" href="https://github.com/rose1988c/Tools">Github</a></li>
                     </ul>
                     <ul class="nav pull-right" id="main-menu-right">
 
@@ -66,18 +82,16 @@
 
     </div>
     
-    <footer id="footer">
-      
-      <div id="footer-floor">
-        <div class="container">
-          <div class="sqs-layout sqs-grid-12 columns-12" data-type="block-field" data-updated-on="1388757403555" id="footer-floor-blocks"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block markdown-block sqs-block-markdown" data-block-type="44" id="block-94ebe6ef6ecaa7b7f269"><div class="sqs-block-content"><p>
-        © 2014 <a href="http://www.rarestep.com">Rarestep Inc.</a> All rights reserved.
-        <a href="/terms">Terms</a> and <a href="/privacy">Privacy Policy</a>.
-        </p></div></div></div></div></div>
+    <footer id="footer" style="margin-top:30px;">
+        <div class="navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container" style="color:#fff;">
+        			<p>Created by <a target="_blank" href="http://github.com/Rose1988c">Rose1988.c</a></p>
+                </div>
+            </div>
         </div>
-      </div>
     </footer>
-
+    
     {{-- include all required javascripts --}}
     {{ HTML::script('assets/js/jquery.min.js') }}
     {{ HTML::script('assets/js/bootstrap.min.js') }}

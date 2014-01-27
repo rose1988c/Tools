@@ -4,26 +4,22 @@
  *  首页
  *  ------------------------------------------
  */
-Route::get('/', 'HomeController@index');
-
-
-Route::resource('blog', 'BlogController'); // open to the world
-
+Route::resource('/', 'HomeController'); //no @
+Route::get('github', 'HomeController@github'); // open to the world
 
 /** ------------------------------------------
- *  Admin Routes
+ *  tool Routes
  *  ------------------------------------------
  */
-Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
+Route::group(array('prefix' => 'tool'), function()
 {
     Route::get('/', function()
     {
-        return Redirect::to('admin/dashboard');
+        return Redirect::to('/');
     });
     Route::resource('dashboard', 'AdminDashboardController');
     Route::resource('users', 'AdminUserController');
     Route::resource('blog', 'AdminBlogController');
-
 });
 
 /**
