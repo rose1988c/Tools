@@ -1,6 +1,12 @@
 #!/usr/bin/env php
 <?php
 
+// 用来替换框架中的目录结构
+$basePath = __DIR__;
+
+// 框架路径
+define('KERNEL_PATH', $basePath . '/../vendor/laravel');
+
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader
@@ -13,7 +19,7 @@
 |
 */
 
-require __DIR__.'/bootstrap/autoload.php';
+require $basePath.'/bootstrap/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +33,7 @@ require __DIR__.'/bootstrap/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/bootstrap/start.php';
+$app = require_once $basePath.'/bootstrap/start.php';
 
 $app->boot();
 

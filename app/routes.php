@@ -17,7 +17,7 @@ Route::group(array('prefix' => 'tool'), function()
     {
         return Redirect::to('/');
     });
-    Route::resource('dashboard', 'AdminDashboardController');
+    Route::resource('icurl', 'AdminDashboardController');
     Route::resource('users', 'AdminUserController');
     Route::resource('blog', 'AdminBlogController');
 });

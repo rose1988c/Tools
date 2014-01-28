@@ -14,6 +14,9 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
+defined(KERNEL_PATH) or define( KERNEL_PATH, __DIR__ . '/./../vendor/laravel');
+
+
 require KERNEL_PATH . '/../autoload.php';
 
 /*
